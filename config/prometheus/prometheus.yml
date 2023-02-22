@@ -4,10 +4,9 @@ global:
   evaluation_interval:  1m
   external_labels:
     monitor: "test-prometheus"
-  #quetry_log_file: /etc/prometheus/query.log
 
-rule_files:
-  - /etc/prometheus/rules/*.yaml
+#rule_files:
+ #- /etc/prometheus/rules/*.yaml
 
 scrape_configs:
   - job_name: prometheus
