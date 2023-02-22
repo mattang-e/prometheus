@@ -1,0 +1,17 @@
+global:
+  scrape_interval:      15s
+  scrape_timeout:       10s
+  evaluation_interval:  1m
+  external_labels:
+    monitor: "test-prometheus"
+  #quetry_log_file: /etc/prometheus/query.log
+
+rule_files:
+  - /etc/prometheus/rules/*.yaml
+
+scrape_configs:
+  - job_name: prometheus
+    scrape_interval: 15s
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['localhost:9090']
